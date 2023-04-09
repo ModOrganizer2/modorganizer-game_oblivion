@@ -51,13 +51,10 @@ QString GameOblivion::gameName() const
 QList<ExecutableInfo> GameOblivion::executables() const
 {
   return QList<ExecutableInfo>()
-      << ExecutableInfo("Oblivion", findInGameFolder(binaryName()))
-      << ExecutableInfo("Oblivion Launcher", findInGameFolder(getLauncherName()))
-      << ExecutableInfo("Oblivion Mod Manager", findInGameFolder("OblivionModManager.exe"))
-      << ExecutableInfo("BOSS", findInGameFolder("BOSS/BOSS.exe"))
-      << ExecutableInfo("LOOT", QFileInfo(getLootPath())).withArgument("--game=\"Oblivion\"")
-      << ExecutableInfo("Construction Set", findInGameFolder("TESConstructionSet.exe"))
-  ;
+    << ExecutableInfo("Oblivion", findInGameFolder(binaryName()))
+    << ExecutableInfo("Oblivion Launcher", findInGameFolder(getLauncherName()))
+    << ExecutableInfo("Construction Set", findInGameFolder("TESConstructionSet.exe"))
+    << ExecutableInfo("LOOT", QFileInfo(getLootPath())).withArgument("--game=\"Oblivion\"");
 }
 
 QList<ExecutableForcedLoadSetting> GameOblivion::executableForcedLoads() const
